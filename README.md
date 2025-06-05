@@ -81,6 +81,67 @@ const getEmployeerProfileId = (profile: Profile) => profile.profileId;
     const getEmployeerProfileId = (profile: Profile) => profile.profileId;
         
   ```
+
+<li>
+ Explain difference between interface and type in TypeScript by writing some code
+ <br/>
+  Level: Easy, Duration: 5 minutes
+</li>
+  <br/>
+
+  Ans :
+
+  ```ts
+  // Interface and type are very similar and both can be used interchangeably.
+
+   // Similar:
+   // Using interface
+    interface Person {
+      name: string;
+      age: number;
+    }
+    
+    // Using type
+    type PersonType = {
+      name: string;
+      age: number;
+    };
+    
+    const p1: Person = { name: "Alice", age: 30 };
+    const p2: PersonType = { name: "Bob", age: 25 };
+
+  // Diff-1:
+
+    // interface supports extends
+    interface Employee extends Person {
+      jobRole: string;
+    }
+    
+    // type uses intersection
+    type EmployeeType = PersonType & { jobRole: string };
+    
+    const e1: Employee = { name: "Sumama", age: 21, jobRole: "SDE" };
+    const e2: EmployeeType = { name: "Ali", age: 22, jobRole: "Designer" };
+
+    // Diff-2:
+
+    Declaration Merging (Only for Interface) means when you difine name of interface and use other replace or create interface same name so it will merge;
+    interface Book {
+    title: string;
+  }
+  
+  interface Book {
+    author: string;
+  }
+  
+  const b: Book = {
+    title: "TS Handbook",
+    author: "Microsoft"
+  };
+
+ // This will NOT work with type, only interface allows merging definitions.
+        
+  ```
   
   
 
