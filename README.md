@@ -150,6 +150,29 @@ const getEmployeerProfileId = (profile: Profile) => profile.profileId;
 
 
   ```
+
+<li>
+  Write a function `getAddress` which adds city, state and country and returns a comma separated full address
+  <br/>
+  Level: Easy, Duration: 5 minutes
+</li>
+  <br/>
+
+  Ans :
+
+  ```ts
+
+  type props = {
+    city?: string;
+    state?: string;
+    country?: string;
+  };
+
+  function getAddress (p : props) : string{
+    return [p.city, p.state, p.country].filter(Boolean).join(',');
+  };
+
+  ```
   
 
 </ul>
