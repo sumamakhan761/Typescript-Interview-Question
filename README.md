@@ -141,8 +141,15 @@ const getEmployeerProfileId = (profile: Profile) => profile.profileId;
 
  // This will NOT work with type, only interface allows merging definitions.
         
+ // Diff-3:
+
+  Utility Types (Works with type)
+
+  type Point = { x: number; y: number };
+  type ReadOnlyPoint = Readonly<Point>; // Makes all props readonly
+
+
   ```
-  
   
 
 </ul>
