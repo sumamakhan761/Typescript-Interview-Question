@@ -235,5 +235,35 @@ const Message = (message: string): void => {
   
   ```
 
+<li>
+  Why never as function return type in ts?
+  <br/>
+  Level: Easy, Duration: 5 minutes
+</li>
+  <br/>
+  
+  ```
+   never represents a type that never occurs. If a function has never as its return type, it does not return anything — not even undefined.
+
+    const errorHandler = (message: string): never => {
+      throw new Error(message);
+    };
+    
+    // this also works with void
+    const errorHandler2 = (message: string): void => {
+      throw new Error(message);
+    };
+    
+    // here implicitly the return type will be string
+    const errorHandler3 = (message: string) => {
+      if (message === 'server-error') {
+        return message;
+      } else {
+        throw new Error(message);
+      }
+    };
+
+  ```
+  
 
 </ul>
