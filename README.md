@@ -346,4 +346,111 @@ document.getElementById("submitBtn")?.addEventListener("click", () => {
 
 ```
 
+<li>
+  Give an example on how will you add type or interface for class
+  <br/>
+  Level: Medium, Duration: 15 minutes
+</li>
+
+  <br/>
+  
+  Ans :
+
+```ts
+
+interface ProfileInterface {
+  getProfileName(): string;
+  getSecurityPin(): string;
+  optionalFunction?(): void;
+}
+
+class Profile {
+  firstName: string;
+  lastName: string;
+  private securityPin: string;
+  readonly email: string;
+  static readonly maxBuyingCredit = 10000;
+}
+
+class Profile implements ProfileInterface {
+  constructor(
+      firstName: string,
+      lastName: string,
+      securityPin: string,
+      email: string
+    ) {
+      this.firstName = firstName;
+      this.lastName = lastName;
+      this.securityPin = securityPin;
+      this.email = email;
+    }
+  
+      getProfileName(): string {
+        return [this.firstName, this.lastName].join(' ');
+      }
+    
+      getSecurityPin(): string {
+        return this.securityPin;
+      }
+      updateSecurtyPin(pin: string): void {
+      this.securityPin = pin;
+     }
+  
+      getEmail(): string {
+        return this.email;
+      }
+  
+    // changeEmail(): void {
+    //   not allowed since email is readonly
+    //   this.email = 'xyz@gmail.com';
+    // }
+  }
+
+  const buyerProfile = new Profile(
+    'Sumama',
+    'Khan',
+    '2160',
+    'xyz@gmail.com'
+  );
+
+  console.log(buyerProfile.getProfileName());
+  console.log(buyerProfile.firstName, buyerProfile.lastName);
+  buyerProfile.updateSecurtyPin('1234');
+
+  // This is not allowed since this is a private property
+  // console.log(buyerProfile.securityPin);
+
+  console.log(buyerProfile.getSecurityPin()); // 1234
+
+  console.log(buyerProfile.getEmail()); // email
+
+  // static property does not exist on the instance but on the main class itself
+  console.log(Profile.maxBuyingCredit);
+
+  // now interviewer say extend class more
+
+ class PremiumProfile extends Profile {
+    private customUsername: string | undefined;
+  
+    setUsername(username: string): void {
+      this.customUsername = username;
+    }
+  
+    getUsername(): string | undefined {
+      return this.customUsername;
+    }
+  }
+
+const vipCustomer = new PremiumProfile(
+  'Senzo',
+  'Yomi',
+  '1233',
+  'xyz@gmail.com'
+);
+vipCustomer.setUsername('Senzoyami');
+console.log(vipCustomer.getUsername());
+console.log(vipCustomer.getProfileName());
+
+```
+
 </ul>
