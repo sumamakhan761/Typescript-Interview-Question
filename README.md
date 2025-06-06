@@ -453,4 +453,53 @@ console.log(vipCustomer.getProfileName());
 
 ```
 
+<li>
+  Explain enum in ts with some code
+  <br/>
+  Level: Easy, Duration: 5 minutes
+</li>
+  <br/>
+  Ans :
+
+```ts
+// in js
+const profile = {
+  buyer: 0,
+  seller: 1,
+  admin: 2,
+};
+
+// in TS
+// Note that by default the values will be 0,1,2...
+enum ProfileEnum {
+  buyer,
+  seller,
+  admin,
+}
+
+let myProfile: ProfileEnum = ProfileEnum.buyer;
+console.log(profile.buyer, myProfile); // profile -> 0 , ProfileEnum -> 0
+
+// This is a much recommended way of defining enums with strings rather than numbers
+enum TaskEnum {
+  Pnding = 'pending',
+  Progess = 'progess',
+  Success = 'success',
+}
+
+interface TaskInterface {
+  id: number;
+  task: TaskEnum;
+}
+
+const tasks : TaskInterface =  {
+  id: 1,
+  // this will throw error because type for profile is an enum and not string. Hence enum is a better way of using constant strings in your project to avoid any error
+  // task: 'pending'
+
+  task: TaskEnum.Prending, // right way
+};
+
+```
+
 </ul>
