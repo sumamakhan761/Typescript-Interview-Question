@@ -245,7 +245,7 @@ const Message = (message: string): void => {
   Ans :
   
   ```ts
-   never represents a type that never occurs. If a function has never as its return type, it does not return anything — not even undefined.
+   // never represents a type that never occurs. If a function has never as its return type, it does not return anything — not even undefined.
 
     const errorHandler = (message: string): never => {
       throw new Error(message);
@@ -278,8 +278,8 @@ const Message = (message: string): void => {
   Ans :
   
   ```ts
-    any is a type that tells TypeScript to turn off type checking for that variable.
-    It means the value can be anything — a string, number, object, function, etc.
+   // any is a type that tells TypeScript to turn off type checking for that variable.
+   // It means the value can be anything — a string, number, object, function, etc.
 
     const Name = (firstName: any, lastName: any) => {
       return firstName + lastName;
@@ -296,7 +296,7 @@ const Message = (message: string): void => {
   Ans :
 
   ```ts
-unknown is a type-safe alternative to any means this value can be anything, but you must check its type before using it.
+// unknown is a type-safe alternative to any means this value can be anything, but you must check its type before using it.
 
   let's take first any type
   
@@ -308,16 +308,42 @@ unknown is a type-safe alternative to any means this value can be anything, but 
   now, Unknown
 
   function handleResponse(data: unknown) {
-  // TypeScript forces you to check the type
-  if (typeof data === "string") {
-    console.log(data.toUpperCase()); // Safe
-  } else {
-    console.log("Not a string, cannot convert to uppercase.");
+    // TypeScript forces you to check the type
+    if (typeof data === "string") {
+      console.log(data.toUpperCase()); // Safe
+    } else {
+      console.log("Not a string, cannot convert to uppercase.");
+    }
   }
-}
-
 
   ```
   
+<li>
+  How will you add type for a DOM input element
+  <br/>
+  Level: Easy, Duration: 5 minutes
+</li>
+  <br/>
+  Ans :
+
+```ts
+
+// When working with DOM elements (like <input>), TypeScript needs to know what kind of element
+// you're working with so it can give you proper type safety and autocomplete.
+
+// HTML (assume this exists in your page)
+/*
+<input id="username" type="text" />
+<button id="submitBtn">Submit</button>
+*/
+
+document.getElementById("submitBtn")?.addEventListener("click", () => {
+  const input = document.getElementById("username") as HTMLInputElement;
+
+  // Now we can safely access input.value
+  console.log("Username:", input.value);
+});
+
+```
 
 </ul>
