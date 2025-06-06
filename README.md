@@ -236,7 +236,7 @@ const Message = (message: string): void => {
   ```
 
 <li>
-  Why never as function return type in ts?
+  Why never as function return type in TS?
   <br/>
   Level: Easy, Duration: 5 minutes
 </li>
@@ -244,7 +244,7 @@ const Message = (message: string): void => {
 
   Ans :
   
-  ```
+  ```ts
    never represents a type that never occurs. If a function has never as its return type, it does not return anything — not even undefined.
 
     const errorHandler = (message: string): never => {
@@ -268,7 +268,7 @@ const Message = (message: string): void => {
   ```
 
 <li>
-  what is any type can you write come code ?
+  Explain any type in TS and write some code ?
   <br/>
   Level: Easy, Duration: 5 minutes
 </li>
@@ -277,7 +277,7 @@ const Message = (message: string): void => {
 
   Ans :
   
-  ```
+  ```ts
     any is a type that tells TypeScript to turn off type checking for that variable.
     It means the value can be anything — a string, number, object, function, etc.
 
@@ -286,5 +286,38 @@ const Message = (message: string): void => {
     };
 
 ```
+
+<li>
+  Explain unknown type in TS with some code
+  <br/>
+  Level: Easy, Duration: 5 minutes
+</li>
+  <br/>
+  Ans :
+
+  ```ts
+unknown is a type-safe alternative to any means this value can be anything, but you must check its type before using it.
+
+  let's take first any type
+  
+  function handleResponse(data: any) {
+    // You can do anything — even dangerous operations
+    console.log(data.toUpperCase()); // No error, but may crash at runtime if data is not a string
+  }
+
+  now, Unknown
+
+  function handleResponse(data: unknown) {
+  // TypeScript forces you to check the type
+  if (typeof data === "string") {
+    console.log(data.toUpperCase()); // Safe
+  } else {
+    console.log("Not a string, cannot convert to uppercase.");
+  }
+}
+
+
+  ```
+  
 
 </ul>
