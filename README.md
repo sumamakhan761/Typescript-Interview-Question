@@ -173,6 +173,47 @@ const getEmployeerProfileId = (profile: Profile) => profile.profileId;
   };
 
   ```
+
+<li>
   
+  Explain How to Narrow Union in TS with some code
+  (Union narrowing is the process TypeScript uses to figure out the specific type from a union of multiple possible types at runtime.)
+  <br/>
+  Level: Easy, Duration: 5 minutes
+
+</li>
+
+  <br/>
+
+  ```ts
+
+    type Pending = {
+    category: 'Pending';
+  };
+  
+  type Process = {
+    category: 'Process';
+  };
+  
+  type Success = {
+    category: 'Success';
+  };
+
+  type Task = Pending | Process | Success;
+
+   const getTask = (T: Task) => {
+      if (T.category === 'Pending') {
+          console.log(`you'r task in ${T.category}`)
+        return T.category;
+      } else if (T.category === 'Process') {
+          console.log(`you'r task in ${T.category}`)
+        return T.category;
+      } else if (T.category === 'Success') {
+          console.log(`you'r task is ${T.category}`)
+        return T.category;
+      }
+    };
+  
+  ```
 
 </ul>
