@@ -174,6 +174,7 @@ const getEmployeerProfileId = (profile: Profile) => profile.profileId;
 
   ```
 
+
 <li>
   
   Explain How to Narrow Union in TS with some code
@@ -213,7 +214,26 @@ const getEmployeerProfileId = (profile: Profile) => profile.profileId;
         return T.category;
       }
     };
+
+
+  ```
+<li>
+  
+  Explain void in TS with some code
+  <br/>
+Level: Easy, Duration: 5 minutes
+
+</li>
+  <br/>
+
+  ```ts
+
+// void is used to define function return types when function does not return any thing
+const Message = (message: string): void => {
+  console.log(message);
+};
   
   ```
+
 
 </ul>
