@@ -241,6 +241,8 @@ const Message = (message: string): void => {
   Level: Easy, Duration: 5 minutes
 </li>
   <br/>
+
+  Ans :
   
   ```
    never represents a type that never occurs. If a function has never as its return type, it does not return anything — not even undefined.
@@ -264,6 +266,25 @@ const Message = (message: string): void => {
     };
 
   ```
+
+<li>
+  what is any type can you write come code ?
+  <br/>
+  Level: Easy, Duration: 5 minutes
+</li>
+
+  <br/>
+
+  Ans :
   
+  ```
+    any is a type that tells TypeScript to turn off type checking for that variable.
+    It means the value can be anything — a string, number, object, function, etc.
+
+    const Name = (firstName: any, lastName: any) => {
+      return firstName + lastName;
+    };
+
+```
 
 </ul>
