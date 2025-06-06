@@ -427,6 +427,30 @@ class Profile implements ProfileInterface {
   // static property does not exist on the instance but on the main class itself
   console.log(Profile.maxBuyingCredit);
 
+  // now interviewer say extend class more
+
+ class PremiumProfile extends Profile {
+    private customUsername: string | undefined;
+  
+    setUsername(username: string): void {
+      this.customUsername = username;
+    }
+  
+    getUsername(): string | undefined {
+      return this.customUsername;
+    }
+  }
+
+const vipCustomer = new PremiumProfile(
+  'Senzo',
+  'Yomi',
+  '1233',
+  'xyz@gmail.com'
+);
+vipCustomer.setUsername('Senzoyami');
+console.log(vipCustomer.getUsername());
+console.log(vipCustomer.getProfileName());
+
 ```
 
 </ul>
