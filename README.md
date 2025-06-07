@@ -511,7 +511,7 @@ const tasks : TaskInterface =  {
 
   Ans:
 
-  ```
+  ```ts
   // Generics allow you to write reusable, type-safe functions, classes, and components that work with any data type — while still keeping type safety.
 
 // basic Ex-1:
@@ -558,7 +558,40 @@ const first = firstElement<string>(["a", "b", "c"]); // type: string
   const numberBox = new Box<number>(123);
   const stringBox = new Box<string>("hello");
 
+  ```
 
+<li>
+  explain tuple in ts with some code and how is it different from array?
+  <br/>
+  Level: Medium, Duration: 10 minutes
+</li>
+  <br/>
+
+  Ans :
+  // A tuple in TypeScript is a special type of array with two main characteristics: Fixed length , Tye Positions (Each element in the tuple has a specific type, and the order of types is enforced)
+  
+  ```ts
+Ex-1:
+
+// with Right Tuple Synctex
+  let person: [string, number] = ["Alice", 30]; // string at index 0, number at index 1
+  let point: [number, number] = [10, 20];      // both numbers
+  let status: [number, string] = [200, "OK"];  // number and string
+
+  // If you try to assign values in the wrong order or with the wrong types, ts       will throw an error
+
+  let wrong: [number, string] = ["hello", 42]; // Error: Type 'string' is not assignable to type 'number'
+
+Ex-2:
+// Tuples can also be labeled for better readability (TypeScript 4.0+):
+
+type UserTuple = [id: number, name: string];
+const user: UserTuple = [1, "Jon doe"];
+console.log(user[0]);
+console.log(user[1]);
+
+// tuple can be immutable when using a readonly
+  
   ```
 
 </ul>
