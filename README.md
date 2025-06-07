@@ -603,7 +603,7 @@ console.log(user[1]);
 
   Ans :
 
-  ```
+  ```ts
   // An index signature allows you to specify the type for all keys (of a certain type) and their corresponding values.
 
 // structue
@@ -622,6 +622,42 @@ const mathScores: Scores = {
   Bob: 85,
   Charlie: 92,
 };
+
+  ```
+
+
+<li>
+  explain what is an index signature in TS
+  <br/>
+  Level: Medium, Duration: 5 minutes
+</li>
+  <br/>
+
+  Ans :
+
+  ```ts
+  // TypeScript’s built-in Record utility type is a shorthand for the above index signature. The syntax is:
+
+// structure
+type MyType = Record<KeyType, ValueType>;
+
+// implementation 
+type student = Record <string , number>;
+const Students : student = {
+  Sumama : 18,
+  usama : 19,
+  kazama : 20,
+}
+
+// added also Dynamic Keys;
+type student = Record <string , string | number>;
+const Students : student = {
+  Sumama : 18,
+  usama : "19",
+  kazama : 20,
+}
+
+console.log(Students)
 
   ```
 
