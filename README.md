@@ -594,4 +594,35 @@ console.log(user[1]);
   
   ```
 
+<li>
+  explain what is an index signature in TS
+  <br/>
+  Level: Medium, Duration: 5 minutes
+</li>
+  <br/>
+
+  Ans :
+
+  ```
+  // An index signature allows you to specify the type for all keys (of a certain type) and their corresponding values.
+
+// structue
+  type MyType = {
+  [key : string] : valueType
+}
+
+// implementation
+
+type Scores = {
+  [studentName: string]: number;
+};
+
+const mathScores: Scores = {
+  Alice: 90,
+  Bob: 85,
+  Charlie: 92,
+};
+
+  ```
+
 </ul>
