@@ -502,4 +502,63 @@ const tasks : TaskInterface =  {
 
 ```
 
+<li>
+  explain generics in ts with some code
+  <br/>
+  Level: Hard, Duration: 15 minutes
+</li>
+  <br/>
+
+  Ans:
+
+  ```
+  // Generics allow you to write reusable, type-safe functions, classes, and components that work with any data type — while still keeping type safety.
+
+// basic Ex-1:
+  function identity<T>(value:T):T {
+    return value;
+  }
+  const num = identity<number>(5);       // type: number
+  const str = identity<string>("Hello"); // type: string
+
+// Ex-2 on arrray function
+
+  function firstElement<T>(arr: T[]): T {
+    return arr[0];
+  }
+
+const first = firstElement<string>(["a", "b", "c"]); // type: string
+
+// EX-3 interface
+
+  interface ApiResponse<T> {
+    data: T;
+    success: boolean;
+  }
+  
+  const response: ApiResponse<string> = {
+    data: "User created",
+    success: true
+  };
+
+// EX-4 Class
+
+  class Box<T> {
+    contents: T;
+  
+    constructor(value: T) {
+      this.contents = value;
+    }
+  
+    getContents(): T {
+      return this.contents;
+    }
+  }
+  
+  const numberBox = new Box<number>(123);
+  const stringBox = new Box<string>("hello");
+
+
+  ```
+
 </ul>
