@@ -863,4 +863,30 @@ EX-3:
 
   ```
 
+<li>
+  Explain how you will use extends keyword for conditional types in ts
+  <br/>
+  Level: Medium, Duration: 5 minutes
+</li>
+  <br/>
+
+  Ans :
+
+  ```ts
+  Ex-1:
+  type IsString<T> = T extends string ? "Yes" : "No";
+  type A = IsString<string>; // "Yes"
+  type B = IsString<number>; // "No"
+
+  Ex-2:
+    type ToStringArray<T> = T extends string ? T[] : never;
+    type Res = ToStringArray<string | number>; // string[] | never => string[];
+
+    const arr: Res = ["hello", "world"];
+    console.log(arr); // Output: ['hello', 'world']
+
+    const invalidArr: Res = [1, 2, 3]; // Error: Type 'number' is not assignable to type 'string'
+
+  ```
+
 </ul>
