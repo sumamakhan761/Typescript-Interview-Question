@@ -819,7 +819,8 @@ console.log(updatedUser);
 
   Ans :
 
-  ```
+  ```ts
+
 // A literal type in TypeScript is a type that represents a specific, exact value rather than a broad category of values.
 
 Ex-1:
@@ -850,6 +851,7 @@ EX-3:
   Ans : 
 
   ```ts
+
   // rarely ask but you have some idea of it.
   three buliding blocks
   1. TS Programming Language
