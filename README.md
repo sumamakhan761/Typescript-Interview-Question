@@ -627,7 +627,7 @@ const mathScores: Scores = {
 
 
 <li>
-  explain what is an index signature in TS
+  explain what is an reocrd helper in TS with code
   <br/>
   Level: Medium, Duration: 5 minutes
 </li>
@@ -658,6 +658,50 @@ const Students : student = {
 }
 
 console.log(Students)
+
+  ```
+
+<li>
+  explain what is Omit utility in TS
+  explain what is Pick utility in TS
+  <br/>
+ Level: Easy, Duration: 5 minutes
+</li>
+  <br/>
+
+  Ans :
+
+  ```
+  // The Omit utility type in TypeScript allows you to create a new type by removing one or more properties from an existing type.
+
+// syntax:
+
+Omit<Type , Keys>
+Interface Person {
+  name : string;
+  age : number;
+  email: stsring;
+}
+
+type PersonWithoutEmail = Omit<Person , 'email'>;
+// resulting type : {name : string; age:number;}
+// you can omit multiple propertis by providing a union of keys;
+type PersonWithoutEmail = Omit<Person , 'email' | 'age'>;
+// resulting type : {name : string;}
+
+// The Pick utility type is the inverse of Omit. It constructs a new type by selecting only the specified properties from an existing type.
+
+// syntax :
+Pick<Type, Keys>
+
+interface Person {
+  name: string;
+  age: number;
+  email: string;
+}
+
+type PersonNameAndEmail = Pick<Person, 'name' | 'email'>;
+// Resulting type: { name: string; email: string; }
 
   ```
 
