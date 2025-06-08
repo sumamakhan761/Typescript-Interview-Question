@@ -778,6 +778,35 @@ const user: User = { id: 1, name: "Jon doe", email: "jondoe@example.com" };
 const updatedUser = updateUser(user, { email: "newjondoe@example.com" });
 // Only the email is updated, other properties remain unchanged[1][6].
 
+  ```
+
+<li>
+  explain what is Required helper in TS
+  <br/>
+  Level: Easy, Duration: 5 minutes
+</li>
+  <br/>
+
+  Ans :
+
+  ```ts
+    // Required helper will help us create a new type with all properties marked as required (rarely used)
+
+    interface Person {
+  name: string;
+  age: number;
+  email: string;
+}
+
+function updateUser(user: Person, updates: Required<Person>): Person {
+  return { ...user, ...updates };
+}
+
+const user: Person = { name: "Jon doe", age : 19, email: "jondoe@example.com" };
+console.log(user);
+const updatedUser = updateUser(user, { name: "Alice", age : 20 , email: "alice@example.com"});
+
+console.log(updatedUser);
 
   ```
 
