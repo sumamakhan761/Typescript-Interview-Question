@@ -1,4 +1,4 @@
-# Typescript-Interview-Question
+# Typescript Interview Questions
 
 <ul>
   <li>
@@ -977,5 +977,39 @@ console.log(getMessage(['Kiran', 'John'])); // ['Hello, Kiran', 'Hello John']
   type NotAnArray = ArrayElement<number>; // never
 
   ```
+
+<li>
+  create custom Readonly helper in ts
+  <br/>
+  Level: Medium, Duration: 10 minutes
+</li>
+  <br/>
+
+Ans :
+
+```ts
+  type CustomReadonly<T> = {
+    readonly [U in keyof T] : T[U];
+    // For each property name U in the set of all keys of T.
+    // So, it loops over every property in T
+    // readonly makes the properly in T.
+  }
+  
+  interface Task {
+    id: number;
+    title: string;
+    description: string;
+  }
+  
+  const task: CustomReadonly<Task> = {
+    id: 1,
+    title: 'first task',
+    description: 'This is the first task',
+  };
+  
+  // task.id = 5; // get an error bcz can't update value only can read
+
+```
+
 
 </ul>
