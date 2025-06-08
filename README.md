@@ -1010,6 +1010,39 @@ Ans :
   // task.id = 5; // get an error bcz can't update value only can read
 
 ```
+<li>
+  create a helper called TupleLength which will return the length of the tuple as type;
+  <br/>
+  Difficulty: Medium, Time: 5 Minutes
+</li>
+  <br/>
 
+  Ans :
+
+  ```ts
+  type TupleLength<T extends any[]> = T['length'];
+  
+  type tuple1 = ['Sumama', 'Khan']
+  type tuple2 = ['red', 'blue', 'orange', 'yellow'];
+
+  type tuple1Length = TupleLength<tuple1>;
+  type tuple2Length = TupleLength<tuple2>; 
+
+  ```
+<li>
+  create a utility called Concat which does Array.concat
+  <br/>
+  Difficulty: Medium, Time: 5 Minutes
+</li>
+  <br/>
+
+  Ans :
+
+  ```ts
+
+  type Concat<T extends any[], U extends any[]> = [...T, ...U];
+  type ConcatResult = Concat<[1, 2], [3, 4]>; // [1, 2, 3, 4]
+
+  ```
 
 </ul>
