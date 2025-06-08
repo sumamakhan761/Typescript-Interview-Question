@@ -987,7 +987,7 @@ console.log(getMessage(['Kiran', 'John'])); // ['Hello, Kiran', 'Hello John']
 
 Ans :
 
-```
+```ts
   type CustomReadonly<T> = {
     readonly [U in keyof T] : T[U];
     // For each property name U in the set of all keys of T.
