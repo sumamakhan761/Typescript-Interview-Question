@@ -849,7 +849,7 @@ EX-3:
 
   Ans : 
 
-  ```
+  ```ts
   // rarely ask but you have some idea of it.
   three buliding blocks
   1. TS Programming Language
