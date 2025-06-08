@@ -918,8 +918,8 @@ function getMessage(name: unknown): unknown {
 }
 
 // Usage
-console.log(getMessage('Kiran')); // Hello Kiran
-console.log(getMessage(['Kiran', 'John'])); // ['Hello, Kiran', 'Hello John']
+console.log(getMessage('Sumama')); // Hello Sumama
+console.log(getMessage(['Sumama', 'John'])); // ['Hello, Sumama', 'Hello John']
 
   ```
 
