@@ -892,7 +892,7 @@ EX-3:
 <li>
   Explain function overloading in ts
   <br/>
-  Level: Medium, Duration: 5 minutes
+  Level: Medium, Duration: 15 minutes
 </li>
   <br/>
 
@@ -920,6 +920,61 @@ function getMessage(name: unknown): unknown {
 // Usage
 console.log(getMessage('Kiran')); // Hello Kiran
 console.log(getMessage(['Kiran', 'John'])); // ['Hello, Kiran', 'Hello John']
+
+  ```
+
+<li> 
+  Explain how you will use infer keyword in ts and Explain how will you use infer with four examples: create your own ReturnType helper, Get type of first arg in a function, get promise return type and get array item types
+  <br/>
+  Level: Hard, Duration: 15 minutes
+</li>
+  <br/>
+
+  Ans :
+
+  ```ts
+
+  // The infer keyword in TypeScript is a powerful feature used within conditional types to extract and name a type from a complex structure.
+
+  // 1. Creating Your Own ReturnType Helper
+
+  type MyReturnType<T> = T extends (...args: any[]) => infer R ? R : never;
+  // R is the magic part
+  // If T is a function, the type becomes R (the return type).
+  // If T is not a function, the type becomes never (which means "no possible value").
+
+  function greet(name: string): string {
+    return `Hello, ${name}!`;
+  }
+  type GreetReturn = MyReturnType<typeof greet>; // string
+
+  // 2. Get Type of First Argument in a Function
+
+  type FirstArg<T> = T extends (first: infer A, ...args: any[]) => any ? A : never;
+
+  function logMessage(message: string, level: number): void {}
+  type MessageType = FirstArg<typeof logMessage>; // string
+
+  function noArgs(): void {}
+  type NoArgType = FirstArg<typeof noArgs>; // never
+
+  // 3. Get Promise Return Type
+
+  type PromiseValue<T> = T extends Promise<infer U> ? U : never;
+  // Is T a Promise? If yes, grab the type inside the promise and call it U and If yes, the type becomes U (the resolved value) or If not, it becomes never.
+
+  type MyPromise = Promise<number[]>;
+  type ValueType = PromiseValue<MyPromise>; // number[]
+  
+  type NotAPromise = PromiseValue<string>; // never
+
+  // 4. Get Array Item Types
+
+  type ArrayElement<T> = T extends (infer U)[] ? U : never;
+
+  type StringArray = string[];
+  type ElementType = ArrayElement<StringArray>; // string
+  type NotAnArray = ArrayElement<number>; // never
 
   ```
 
