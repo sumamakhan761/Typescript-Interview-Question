@@ -732,4 +732,53 @@ type PersonNameAndEmail = Pick<Person, 'name' | 'email'>;
 
   ```
 
+<li>
+  explain what is Partial helper in TS
+  <br/>
+  Level: Easy, Duration: 5 minutes
+</li>
+  <br/>
+
+  Ans :
+  
+  ```ts
+
+// The Partial utility type in TypeScript is a built-in helper that takes an existing type (interface or type alias) and returns a new type where all properties are set to optional.
+
+// syntax
+
+type PartialType = Partial<OriginalType>;
+
+  interface Person {
+    name: string;
+    age: number;
+    email: string;
+  }
+
+type PartialPerson = Partial<Person>; // now all are optional
+
+const userA: PartialUser = {}; // valid: all properties are optional
+const userB: PartialUser = { id: 1 }; // valid: only 'id' is provided
+const userC: PartialUser = { name: "Alice", email: "alice@example.com" }; // valid: 'name' and 'email' provided
+
+// This is equivalent to writing:
+type PartialUser = {
+  id?: number;
+  name?: string;
+  email?: string;
+}
+
+// commom use case for partial is in update functions, where you may want to update only some properties of an object:
+
+function updateUser(user: User, updates: Partial<User>): User {
+  return { ...user, ...updates };
+}
+
+const user: User = { id: 1, name: "Jon doe", email: "jondoe@example.com" };
+const updatedUser = updateUser(user, { email: "newjondoe@example.com" });
+// Only the email is updated, other properties remain unchanged[1][6].
+
+
+  ```
+
 </ul>
