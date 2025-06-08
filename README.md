@@ -792,11 +792,11 @@ const updatedUser = updateUser(user, { email: "newjondoe@example.com" });
   ```ts
     // Required helper will help us create a new type with all properties marked as required (rarely used)
 
-    interface Person {
-  name: string;
-  age: number;
-  email: string;
-}
+  interface Person {
+    name: string;
+    age: number;
+    email: string;
+  }
 
 function updateUser(user: Person, updates: Required<Person>): Person {
   return { ...user, ...updates };
@@ -807,6 +807,37 @@ console.log(user);
 const updatedUser = updateUser(user, { name: "Alice", age : 20 , email: "alice@example.com"});
 
 console.log(updatedUser);
+
+  ```
+
+<li>
+  explain literal type in TS
+  <br/>
+  Level: Medium, Duration: 5 minutes
+</li>
+  <br/>
+
+  Ans :
+
+  ```
+// A literal type in TypeScript is a type that represents a specific, exact value rather than a broad category of values.
+
+Ex-1:
+   // literal type number
+  const age = 32;
+  // literal type string
+  const apiStatus = 'failed';
+
+Ex-2:
+  type Direction = "up" | "down" | "left" | "right";
+  let move: Direction = "up"; // Only these four strings are allowed
+
+EX-3:
+  type DiceRoll = 1 | 2 | 3 | 4 | 5 | 6;
+    function rollDice(): DiceRoll {
+      return (Math.floor(Math.random() * 6) + 1) as DiceRoll;
+    }
+
 
   ```
 
