@@ -1029,5 +1029,20 @@ Ans :
   type tuple2Length = TupleLength<tuple2>; 
 
   ```
+<li>
+  create a utility called Concat which does Array.concat
+  <br/>
+  Difficulty: Medium, Time: 5 Minutes
+</li>
+  <br/>
+
+  Ans :
+
+  ```ts
+
+  type Concat<T extends any[], U extends any[]> = [...T, ...U];
+  type ConcatResult = Concat<[1, 2], [3, 4]>; // [1, 2, 3, 4]
+
+  ```
 
 </ul>
