@@ -889,4 +889,38 @@ EX-3:
 
   ```
 
+<li>
+  Explain function overloading in ts
+  <br/>
+  Level: Medium, Duration: 5 minutes
+</li>
+  <br/>
+
+  Ans :
+
+  ```ts
+  // Function overloading in TypeScript allows you to define multiple signatures for a single function, providing different parameter types and return types based on the input. This is particularly useful for libraries where you want to offer flexible functionality without requiring users to understand the underlying implementation details.
+
+// Multiple definitions with type definitions
+function getMessage(name: string): string;
+function getMessage(name: string[]): string[];
+
+// Note that we have not used arrow function since with arrow function we can not redeclare the function
+
+// One Implementation
+function getMessage(name: unknown): unknown {
+  if (typeof name === 'string') {
+    return `Hello, ${name}`;
+  } else if (Array.isArray(name)) {
+    return name.map((i) => `Hello, ${i}`);
+  }
+  throw new Error('name not provided');
+}
+
+// Usage
+console.log(getMessage('Kiran')); // Hello Kiran
+console.log(getMessage(['Kiran', 'John'])); // ['Hello, Kiran', 'Hello John']
+
+  ```
+
 </ul>
