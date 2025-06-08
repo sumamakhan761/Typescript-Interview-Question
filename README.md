@@ -838,6 +838,26 @@ EX-3:
       return (Math.floor(Math.random() * 6) + 1) as DiceRoll;
     }
 
+  ```
+
+<li>
+  what is TSC and TSLS
+  <br/>
+  Level: Medium, Duration: 5 minutes
+</li>
+  <br/>
+
+  Ans : 
+
+  ```
+  // rarely ask but you have some idea of it.
+  three buliding blocks
+  1. TS Programming Language
+  ans : Language: syntax, keywords and type annotations
+  2. TS compiler (TSC)
+  ans : TSC: converts TS into JS
+  3. TS Language service
+  ans : TSLS: additional layer ex: autocompletion, autoimport, code formatting, signature help, colorization etc.
 
   ```
 
