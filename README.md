@@ -671,7 +671,7 @@ console.log(Students)
 
   Ans :
 
-  ```
+  ```ts
   // The Omit utility type in TypeScript allows you to create a new type by removing one or more properties from an existing type.
 
 // syntax:
@@ -702,6 +702,33 @@ interface Person {
 
 type PersonNameAndEmail = Pick<Person, 'name' | 'email'>;
 // Resulting type: { name: string; email: string; }
+
+  ```
+
+<li>
+  explain what is Readonly helper in TS
+  <br/>
+  Level: Easy, Duration: 5 minutes
+</li>
+  <br/>
+
+  Ans :
+  
+  ```ts
+
+  interface Person {
+    name: string;
+    age: number;
+    email: string;
+  }
+
+  const person: Readonly<Person> = {
+    name : "Jon doe",
+    age : 18,
+    email : xyz@gmail.com,
+  }
+
+  // person.age = 19; // mutation will not be allowed bcz you can only read not write
 
   ```
 
